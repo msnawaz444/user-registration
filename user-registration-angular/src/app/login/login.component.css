@@ -1,0 +1,56 @@
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    width: 15%;
+}
+
+.container {
+    text-align: center;
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: rgb(20, 139, 236);
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+}
+input[type=submit] {
+    background-color: green;
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    color: antiquewhite;
+}
+
+input[type=submit]:disabled {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color:slategray;
+    color: azure;
+}
+
+.form-group p{
+    color: rgb(253, 14, 14);
+}

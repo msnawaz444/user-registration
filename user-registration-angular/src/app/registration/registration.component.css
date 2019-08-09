@@ -1,0 +1,63 @@
+
+.logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    width: 8%;
+}
+h1{
+    text-align: center;
+}
+
+input[type=text] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=email] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+
+input[type=submit]:disabled {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: slategray;
+    color: azure;
+}
+
+input[type="submit"] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color:green;
+    color: azure;
+}
+
+strong{
+    color: rgb(9, 164, 236);
+    
+}
+label{
+    color: rgb(77, 76, 72);
+}
+
+.form-group p{
+    color: rgb(253, 14, 14);
+}

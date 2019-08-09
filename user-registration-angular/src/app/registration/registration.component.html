@@ -1,0 +1,83 @@
+
+<body>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <div>
+    <img class="logo" src="assets/images/cglogo.jpg">
+  </div>
+
+  <div class="container">
+    <form (ngSubmit)="onSubmit(registrationForm)" #registrationForm="ngForm">
+      <h1>Capgemini User Registration Form</h1>
+
+      <div class="form-group">
+        <label>First name</label><br>
+        <input type="text" [(ngModel)]="user.firstName" #firstName="ngModel" name="firstName" required minlength="4">
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+          <p *ngIf="firstName.hasError('required')" >
+            First Name is required
+          </p>
+          <p *ngIf="firstName.hasError('minlength')">
+            Minimum 6 characters are required
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Last name</label><br>
+        <input type="text" [(ngModel)]="user.lastName" #lastName="ngModel" name="lastName" required minlength="3">
+        <div *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+          <p *ngIf="lastName.hasError('required')">
+            Last Name is required
+          </p>
+          <p *ngIf="lastName.hasError('minlength')">
+            Minimum 3 characters are required
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label><br>
+        <input type="email" [(ngModel)]="user.userName" #userName="ngModel" name="userName" required minlength="6" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" title="Please enter valid email">
+        <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+          <p *ngIf="userName.hasError('required')">
+            Email is required
+          </p>
+          <p *ngIf="userName.hasError('minlength')">
+            Minimum 6 characters are required
+          </p>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password(6 or more character)</label><br>
+        <input type="password" [(ngModel)]="user.password" #password="ngModel" name="password" required minlength="6">
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          <p *ngIf="password.hasError('required')">
+            Password is required
+          </p>
+          <p *ngIf="userName.hasError('minlength')">
+            Minimum 6 characters are required
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <p>You agree to the capgemini <b>User Agreement, Privacy Policy</b>, and<br> <b>Cookie Policy</b>.</p>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" name="submit" value="Agree & Join" [disabled]="registrationForm.invalid">
+      </div>
+
+      <div id="new-to-linkedIn">
+        <p>Already on Capgemini? <a routerLink="/login"><strong>Sign in</strong></a></p>
+      </div>
+    </form>
+    <div>
+      <p>Capgemini Corporation © 2019</p>
+    </div>
+
+  </div>
+
+
+</body>

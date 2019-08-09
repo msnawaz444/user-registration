@@ -1,0 +1,52 @@
+
+<div>
+  <img class="logo" src="assets/images/cglogo.jpg">
+</div>
+
+<div class="container">
+
+  <form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
+    <h1>Welcome Back</h1>
+    <p>Don't miss your next opportunity. Sign in to stay updated on your professional world.</p>
+
+    <div class="form-group">
+      <input type="text" [(ngModel)]="user.userName" #userName="ngModel" name="userName" required minlength="6"
+        placeholder="Email or Phone" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" title="Please enter valid email">
+      <div *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+        <p *ngIf="userName.hasError('required')">
+          User name field is required
+        </p>
+        <p *ngIf="userName.hasError('minlength')">
+          Minimum 6 characters are required
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input type="password" [(ngModel)]="user.password" #password="ngModel" name="password" required minlength="6"
+        placeholder="Password">
+      <div *ngIf="password.invalid && (password.dirty || password.touched)">
+        <p *ngIf="password.hasError('required')">
+          User name field is required
+        </p>
+        <p *ngIf="password.hasError('minlength')">
+          Minimum 6 characters are required
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <input type="submit" name="submit" value="Sign in" [disabled]="form1.invalid">
+    </div>
+
+    <div id="forget-password">
+      <a id="forgot" href="#"><b>Forgot Password?</b></a>
+    </div>
+
+    <div id="new-to-linkedIn">
+      <p>New to Capgemini? <a routerLink="/registration"><b>Join now</b></a></p>
+    </div>
+
+
+  </form>
+</div>
